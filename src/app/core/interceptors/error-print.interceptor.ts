@@ -21,6 +21,7 @@ export class ErrorPrintInterceptor implements HttpInterceptor {
       tap({
         error: (error: unknown) => {
           const url = new URL(request.url);
+          console.log(JSON.stringify(error));
           const { status } = error;
 
           if (status === 401) {
